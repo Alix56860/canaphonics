@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CANAPhonics · A Jamais, EP remasterisé</title>
+<meta name="description" content="CANAPhonics : l'EP A Jamais, remasterisé. Quatre titres à écouter sur Spotify et Apple Music : Timing, Mes pépites, A jamais, Ma problématique.">
+<meta property="og:title" content="CANAPhonics · A Jamais">
+<meta property="og:description" content="L'EP A Jamais, remasterisé. Quatre titres à écouter maintenant.">
+<meta property="og:image" content="img/band.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#07080d;--ink:#f3f1ec;--soft:rgba(243,241,236,.68);--faint:rgba(243,241,236,.4);--line:rgba(243,241,236,.14);--blue:#3d7bff;--amber:#ffb15c;--red:#e03237;
+  --sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.display{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}
+header.top{position:fixed;z-index:10;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:calc(16px + var(--sat)) clamp(16px,3vw,40px) 16px;transition:background .3s}
+header.top.solid{background:rgba(7,8,13,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.logo{font-family:Anton,Impact,sans-serif;font-size:1.25rem;letter-spacing:.06em;text-decoration:none}
+header nav{display:flex;gap:1.8rem;font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+header nav a{text-decoration:none;color:var(--soft)}header nav a:hover{color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--ink);color:var(--bg);border-radius:999px;padding:.7rem 1.2rem;font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer}
+.pill.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;background:#05060a}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.06);will-change:transform}
+#lights{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;pointer-events:none}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,8,13,.96) 0%,rgba(7,8,13,.35) 42%,rgba(7,8,13,.1) 70%,rgba(7,8,13,.5) 100%)}
+.hero .copy{position:absolute;left:clamp(16px,3vw,40px);right:clamp(16px,3vw,40px);bottom:calc(40px + var(--sab));display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
+.hero h1{margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(4rem,12vw,12rem);line-height:.92;letter-spacing:-.005em;text-transform:uppercase}
+.hero h1 span{display:block}
+.hero h1 .o{-webkit-text-stroke:2px var(--ink);color:transparent}
+.hero .side{max-width:22rem}
+.hero .side .k{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:600}
+.hero .side p{color:var(--soft);line-height:1.5;margin:.6rem 0 1.2rem}
+.hero .side .row{display:flex;gap:.6rem;flex-wrap:wrap}
+
+/* marquee */
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:var(--blue);color:#fff}
+.marquee div{display:flex;gap:3rem;white-space:nowrap;padding:.9rem 0;font-family:Anton,Impact,sans-serif;font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;animation:mq 26s linear infinite;width:max-content}
+.marquee span::after{content:"✦";margin-left:3rem;color:var(--amber)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section.block{padding:clamp(4rem,9vw,8rem) clamp(16px,4vw,48px);max-width:1240px;margin:0 auto}
+.k2{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);font-weight:600}
+h2{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,6vw,5.4rem);line-height:.9;margin:.5rem 0 2rem}
+
+/* album */
+.album{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.cover{position:relative;aspect-ratio:1;border-radius:6px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(61,123,255,.45);transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .25s ease-out}
+.cover img{width:100%;height:100%;object-fit:cover;object-position:28% 50%;filter:contrast(1.08) saturate(1.1)}
+.cover .t{position:absolute;inset:auto 0 0 0;padding:1.4rem;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);font-family:Anton,Impact,sans-serif;font-size:clamp(2rem,4vw,3.2rem);text-transform:uppercase;line-height:.9}
+.cover .t small{display:block;font-family:Inter,sans-serif;font-size:.74rem;letter-spacing:.2em;color:var(--amber);margin-bottom:.4rem}
+ol.tracks{list-style:none;margin:0 0 1.6rem;padding:0;counter-reset:t}
+ol.tracks li{counter-increment:t;display:flex;align-items:center;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+ol.tracks li::before{content:counter(t,decimal-leading-zero);font-size:.74rem;color:var(--faint);width:1.6rem}
+ol.tracks li b{flex:1;font-weight:500}
+ol.tracks li span{color:var(--faint);font-size:.86rem;font-variant-numeric:tabular-nums}
+.listen{display:flex;gap:.6rem;flex-wrap:wrap}
+
+/* tour */
+.tour{border-top:1px solid var(--line)}
+.date{display:grid;grid-template-columns:7rem 1fr 1fr auto;gap:1rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--line);transition:background .2s,padding .2s}
+.date:hover{background:rgba(61,123,255,.08);padding-inline:.8rem}
+.date .d{font-family:Anton,Impact,sans-serif;font-size:1.6rem;line-height:1}
+.date .d small{display:block;font-family:Inter,sans-serif;font-size:.7rem;letter-spacing:.16em;color:var(--faint);margin-top:.25rem}
+.date .c{font-weight:600;font-size:1.1rem}
+.date .v{color:var(--soft)}
+.date .s{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.date .s.out{color:var(--faint);text-decoration:line-through}
+.date .s.few{color:var(--amber)}
+
+/* drums band */
+.drums{position:relative;height:90vh;min-height:520px;overflow:hidden}
+.drums img{position:absolute;left:0;width:100%;height:130%;top:-15%;object-fit:cover;will-change:transform}
+.drums::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,13,.85),rgba(7,8,13,.1) 60%)}
+.drums blockquote{position:absolute;z-index:2;left:clamp(16px,4vw,48px);top:50%;transform:translateY(-50%);margin:0;max-width:34rem}
+.drums blockquote p{font-family:Anton,Impact,sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:.86;text-transform:uppercase;margin:0}
+.drums blockquote cite{display:block;margin-top:1.2rem;font-style:normal;color:var(--soft);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem}
+.drums blockquote em{font-style:normal;color:var(--amber)}
+
+/* news */
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.news article{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0c0e15}
+.news article img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.news article div{padding:1.2rem}
+.news h3{margin:.4rem 0 .4rem;font-size:1.15rem}
+.news p{margin:0;color:var(--soft);font-size:.92rem;line-height:1.5}
+.join{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid var(--line);border-radius:18px;padding:clamp(1.4rem,3vw,2.4rem);background:linear-gradient(120deg,rgba(61,123,255,.18),rgba(255,173,74,.08))}
+.join h3{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(1.8rem,3.4vw,2.8rem);margin:0;line-height:.95}
+.join form{display:flex;gap:.5rem;flex:1;max-width:28rem;min-width:16rem}
+.join input{flex:1;min-width:0;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:999px;color:var(--ink);padding:.75rem 1.1rem;font:inherit}
+footer{border-top:1px solid var(--line);padding:2rem clamp(16px,4vw,48px) calc(2rem + var(--sab));display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:var(--faint);font-size:.8rem}
+footer nav{display:flex;gap:1.2rem}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media (max-width: 860px){
+  header nav{display:none}
+  .album{grid-template-columns:1fr}
+  .date{grid-template-columns:5rem 1fr auto}
+  .date .v{display:none}
+  .news{grid-template-columns:1fr}
+  .hero img{object-position:42% 30%}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.marquee div{animation:none}.reveal{opacity:1;transform:none}}
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.logo img{height:34px;width:auto;display:block}
+.hero .shade{background:linear-gradient(to top,rgba(7,8,13,.5) 0%,rgba(7,8,13,0) 22%,rgba(7,8,13,0) 80%,rgba(7,8,13,.5) 100%)}
+.hero .copy{justify-content:flex-end}
+.hero .side{background:rgba(7,8,13,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:1.2rem 1.3rem}
+.marquee{background:var(--red)}
+.player{margin:0 0 1.4rem;border-radius:14px;overflow:hidden;background:#0c0e15;min-height:152px}
+.player iframe{display:block;width:100%;height:152px;border:0}
+ol.tracks li{cursor:pointer;transition:color .2s}
+ol.tracks li:hover b,ol.tracks li[aria-current="true"] b{color:var(--amber)}
+ol.tracks li button{border:1px solid var(--line);background:none;color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center;flex:none}
+ol.tracks li[aria-current="true"] button{background:var(--ink);color:var(--bg)}
+ol.tracks li::before{width:1.4rem}
+ol.tracks .sleeve{width:52px;height:52px;border-radius:6px;object-fit:cover;flex:none;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.cover img{transition:opacity .2s}
+ol.tracks .where{display:flex;gap:.8rem;font-size:.76rem;letter-spacing:.06em}
+ol.tracks .where a{color:var(--faint);text-decoration:none;border-bottom:1px solid var(--line)}
+ol.tracks .where a:hover{color:var(--ink)}
+@media (max-width:520px){ol.tracks .where{display:none}}
+.band{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:1rem;align-items:stretch}
+.band .txt{padding-right:1rem}
+.band .txt p{color:var(--soft);line-height:1.65;margin:0 0 1rem}
+.band figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0c0e15}
+.band figure img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block}
+.roles{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.roles span{border:1px solid var(--line);border-radius:999px;padding:.4rem .8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.contact{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;border:1px solid var(--line);border-radius:18px;padding:clamp(1.4rem,3vw,2.4rem);background:linear-gradient(120deg,rgba(224,50,55,.16),rgba(61,123,255,.12))}
+.contact h3{font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(1.8rem,3.4vw,2.8rem);margin:0;line-height:.95}
+.contact p{color:var(--soft);margin:.5rem 0 0}
+.contact .row{display:flex;gap:.6rem;flex-wrap:wrap}
+.contact .row a[href^="mailto:"]{text-transform:none;letter-spacing:.01em;font-size:.9rem}
+
+.logo-h{margin:.8rem 0 1.6rem}
+.logo-h img{display:block;width:min(560px,86vw);height:auto}
+.studio figure:first-child img{filter:brightness(1.35) contrast(1.05)}
+.lead{color:var(--soft);font-size:1.1rem;line-height:1.65;max-width:44rem;margin:0 0 2.2rem}
+.members{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.member{margin:0;position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0c0e15;aspect-ratio:3/4;cursor:zoom-in}
+.member img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.member:hover img{transform:scale(1.05)}
+.member figcaption{position:absolute;inset:auto 0 0 0;padding:1rem;background:linear-gradient(to top,rgba(0,0,0,.8),transparent)}
+.credits{margin:1.6rem 0 0;color:var(--faint);font-size:.86rem;line-height:1.7;max-width:60rem}
+.member figcaption b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:1.35rem;text-transform:uppercase;letter-spacing:.02em}
+.member figcaption span{font-size:.8rem;color:var(--amber);letter-spacing:.1em;text-transform:uppercase}
+.night{position:relative;height:88vh;min-height:520px;overflow:hidden;background:#000}
+.night img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;object-position:30% 40%;will-change:transform}
+.night::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(0,0,0,.75),rgba(0,0,0,0) 60%)}
+.night blockquote{position:absolute;z-index:2;right:clamp(16px,5vw,64px);top:50%;transform:translateY(-50%);margin:0;max-width:30rem;text-align:right}
+.night blockquote p{font-family:Anton,Impact,sans-serif;font-size:clamp(2.6rem,6.4vw,5.8rem);line-height:.9;text-transform:uppercase;margin:0}
+.night blockquote p em{font-style:normal;color:var(--red)}
+.studio{display:grid;grid-template-columns:1fr 1.5fr;grid-template-rows:1fr 1fr;gap:1rem;height:min(80vh,760px)}
+.studio figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:#0c0e15}
+.studio figure:first-child{grid-row:span 2}
+.studio img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.studio figure:hover img{transform:scale(1.04)}
+#lightbox{border:0;padding:0;background:transparent;max-width:94vw;max-height:92vh}
+#lightbox::backdrop{background:rgba(0,0,0,.88)}
+#lightbox img{display:block;max-width:94vw;max-height:92vh;border-radius:10px}
+#lightbox button{position:absolute;top:10px;right:10px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:1.5rem;cursor:pointer}
+@media (max-width: 860px){
+  .members{grid-template-columns:1fr 1fr}
+  .studio{grid-template-columns:1fr;grid-template-rows:none;height:auto}
+  .studio figure:first-child{grid-row:auto}
+  .studio figure{aspect-ratio:4/3}
+  .studio figure:first-child{aspect-ratio:3/4}
+  .night{height:70vh}
+  .night img{object-position:35% 40%}
+  .night blockquote{left:16px;right:16px;top:auto;bottom:8%;transform:none}
+}
+@media (max-width: 860px){
+  .hero{height:auto;min-height:0;padding-top:calc(70px + var(--sat))}
+  #lights{top:calc(70px + var(--sat))}
+  .hero img{position:relative;height:auto;aspect-ratio:1672/941;transform:none!important;object-position:50% 50%}
+  #lights{height:56.3vw}
+  .hero .shade{display:none}
+  .hero .copy{position:relative;left:auto;right:auto;bottom:auto;padding:1.2rem 16px 0}
+  .hero .side{max-width:none;width:100%;background:none;border:0;padding:0;backdrop-filter:none}
+  header.top{background:rgba(7,8,13,.94)}
+  .band{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="top" id="top"><a class="logo" href="#"><img src="img/logo.png" alt="CANAPhonics"></a><nav><a href="#musique">Musique</a><a href="#groupe">Le groupe</a><a href="#studio">En studio</a><a href="#contact">Contact</a></nav><a class="pill" href="#musique">Écouter</a></header>
+
+<section class="hero" aria-label="CANAPhonics en studio">
+  <img id="hero-img" src="img/band.jpg" alt="CANAPhonics sur scène sous des lumières bleues et orangées : la chanteuse au micro, le claviériste, le batteur et le guitariste. En bas, le titre A Jamais, EP remasterisé.">
+  <canvas id="lights" aria-hidden="true"></canvas>
+  <div class="shade"></div>
+  <div class="copy">
+    <h1 class="sr">CANAPhonics</h1>
+    <div class="side">
+      <div class="k">Nouvel EP · remasterisé</div>
+      <p><b>A Jamais</b> : quatre titres, à écouter maintenant sur Spotify et Apple Music.</p>
+      <div class="row" id="hero-cta"><a class="pill" href="#musique">Écouter l'EP</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="block" id="musique">
+  <div class="album">
+    <div class="cover reveal" id="cover"><img src="img/cover.jpg" alt="Pochette de l'EP A Jamais : la chanteuse au micro, le logo CANAPhonics au-dessus."></div>
+    <div class="reveal">
+      <div class="k2" id="ep-meta">EP · 4 titres · remasterisé</div>
+      <h2 id="ep-title">A Jamais</h2>
+      <div class="player" id="player"></div>
+      <ol class="tracks" id="tracks"></ol>
+      <div class="listen" id="listen"></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="groupe" style="padding-top:0">
+  <div class="k2">Le groupe</div>
+  <h2 class="logo-h"><img src="img/logo.png" alt="CANAPhonics"></h2>
+  <p class="lead reveal" id="bio"></p>
+  <div class="members" id="members"></div>
+  <p class="credits reveal" id="credits"></p>
+</section>
+
+<section class="night" aria-label="En studio">
+  <img id="night-img" src="img/keys-silhouette.jpg" alt="Le claviériste en contre-jour, une lumière blanche derrière lui, un micro devant." loading="lazy">
+  <blockquote class="reveal"><p id="night-text"></p></blockquote>
+</section>
+
+<section class="block" id="studio">
+  <div class="k2">En studio</div>
+  <h2>Derrière les micros</h2>
+  <div class="studio" id="studio-grid"></div>
+</section>
+
+<dialog id="lightbox" aria-label="Photo"><img alt=""><button type="button" aria-label="Fermer">×</button></dialog>
+
+<section class="block" id="contact" style="padding-top:0">
+  <div class="contact reveal">
+    <div><h3>Concerts &amp; contact</h3><p id="contact-text">Pour un concert, une interview ou juste un mot.</p></div>
+    <div class="row" id="contact-links"></div>
+  </div>
+</section>
+
+<footer><span>© <span id="year"></span> CANAPhonics. Tous droits réservés.</span><nav id="socials"></nav></footer>
+
+<script>
+/* ============ SETTINGS : à modifier ============ */
+const SETTINGS = {
+  _help: "Les titres de l'EP, avec leurs liens Spotify et Apple Music (Partager → Copier le lien). Laissez un lien vide pour cacher le bouton correspondant.",
+  ep: { title: 'A Jamais', meta: 'EP · 4 titres · remasterisé' },
+  tracks: [
+    { title: 'Timing', cover: 'img/cover-timing.jpg', spotify: 'https://open.spotify.com/track/6lDAfq6p9vCJPnNVvONa4e', apple: 'https://music.apple.com/fr/album/timing-single/1652709447' },
+    { title: 'Mes pépites', cover: 'img/cover-mes-pepites.jpg', spotify: 'https://open.spotify.com/track/6ixCaWbWt11HVXdkczgBus', apple: 'https://music.apple.com/fr/album/mes-p%C3%A9pites-single/1618777396' },
+    { title: 'A jamais', cover: 'img/cover.jpg', spotify: 'https://open.spotify.com/track/3I0B7HMdWSCm0xBySsn6S7', apple: 'https://music.apple.com/fr/album/a-jamais-single/1610136660' },
+    { title: 'Ma problématique', cover: 'img/cover-ma-problematique.jpg', spotify: 'https://open.spotify.com/track/7alLmhZ7JryXFMOGQZpAL6', apple: 'https://music.apple.com/fr/album/ma-probl%C3%A9matique-single/1613349160' }
+  ],
+  listen: [
+    { name: 'Écouter sur Spotify', link: 'https://open.spotify.com/track/3I0B7HMdWSCm0xBySsn6S7' },
+    { name: 'Écouter sur Apple Music', link: 'https://music.apple.com/fr/album/a-jamais-single/1610136660' },
+    { name: 'Deezer', link: '' }
+  ],
+  bio: "CANAPhonics, c'est la voix et les textes de Coraline, des claviers (Nicolas, également aux arrangements et au mix final), une guitare (Anthony) et la batterie (Alix). Pour les 5 ans de la création du groupe, toutes les chansons ont été remasterisées et sortent exceptionnellement en single EP.",
+  members: [
+    { name: 'Coraline Lippens', role: 'Paroles', photo: 'img/singer.jpg' },
+    { name: 'Nicolas Spendec', role: 'Claviers, mix et arrangements', photo: 'img/keys-hand.jpg' },
+    { name: 'Anthony Musto', role: 'Guitare', photo: 'img/guitar.jpg' },
+    { name: 'Alix Mouret', role: 'Batterie', photo: 'img/drums.jpg' }
+  ],
+  credits: 'Paroles : Coraline Lippens · Claviers, mix et arrangements musicaux : Nicolas Spendec · Guitare : Anthony Musto · Batterie : Alix Mouret. Tous droits réservés CANAPhonics.',
+  quote: 'Quatre musiciens, <em>une même énergie.</em>',
+  studio: [
+    { photo: 'img/singer-silhouette.jpg', alt: 'La chanteuse de profil en contre-jour, le micro à la main.' },
+    { photo: 'img/guitar-studio.jpg', alt: 'Gros plan sur la guitare sunburst, le claviériste flou derrière.' },
+    { photo: 'img/band.jpg', alt: 'Le groupe au complet sur scène.' }
+  ],
+  contact: { emails: [['alixmouret', 'mac.com'], ['nickuala', 'gmail.com']].map(p => p.join('@')), text: 'Pour un concert, une interview ou juste un mot, écrivez à CANAPhonics.' },
+  socials: [{ name: 'Instagram', link: '' }, { name: 'YouTube', link: '' }, { name: 'Facebook', link: '' }],
+  marquee: ['A Jamais · EP remasterisé', 'Timing', 'Mes pépites', 'A jamais', 'Ma problématique', 'Sur Spotify et Apple Music']
+};
+/* ============================================== */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const $ = id => document.getElementById(id);
+const trackId = url => (String(url).match(/track[/:]([A-Za-z0-9]+)/) || [])[1];
+
+$('mq').innerHTML = Array(4).fill(SETTINGS.marquee).flat().map(t => `<span>${esc(t)}</span>`).join('');
+$('ep-title').textContent = SETTINGS.ep.title; $('ep-meta').textContent = SETTINGS.ep.meta;
+$('bio').textContent = SETTINGS.bio;
+$('members').innerHTML = SETTINGS.members.map(m => `<figure class="member reveal"><img src="${esc(m.photo)}" alt="${esc(m.name)}${m.role ? ', ' + esc(m.role) : ''}" loading="lazy"><figcaption><b>${esc(m.name)}</b>${m.role ? `<span>${esc(m.role)}</span>` : ''}</figcaption></figure>`).join('');
+$('credits').textContent = SETTINGS.credits;
+$('night-text').innerHTML = SETTINGS.quote.replace(/<(?!\/?em>)[^>]*>/g, '');
+$('studio-grid').innerHTML = SETTINGS.studio.map(p => `<figure class="reveal"><img src="${esc(p.photo)}" alt="${esc(p.alt)}" loading="lazy"></figure>`).join('');
+// photos open larger on click
+const lb = $('lightbox');
+document.addEventListener('click', e => { const f = e.target.closest('.member, .studio figure'); if (!f || !lb.showModal) return; const im = f.querySelector('img'); lb.querySelector('img').src = im.src; lb.querySelector('img').alt = im.alt; lb.showModal(); });
+lb.addEventListener('click', e => { if (e.target === lb || e.target.tagName === 'BUTTON') lb.close(); });
+$('year').textContent = new Date().getFullYear();
+const links = SETTINGS.listen.filter(l => l.link);
+$('listen').innerHTML = links.map((l, i) => `<a class="pill${i ? ' ghost' : ''}" href="${esc(l.link)}" target="_blank" rel="noopener">${esc(l.name)}</a>`).join('');
+if (links[0]) $('hero-cta').insertAdjacentHTML('beforeend', `<a class="pill ghost" href="${esc(links[0].link)}" target="_blank" rel="noopener">Spotify ↗</a>`);
+if (links[1]) $('hero-cta').insertAdjacentHTML('beforeend', `<a class="pill ghost" href="${esc(links[1].link)}" target="_blank" rel="noopener">Apple Music ↗</a>`);
+$('socials').innerHTML = SETTINGS.socials.filter(s => s.link).map(s => `<a href="${esc(s.link)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join('');
+const c = SETTINGS.contact; $('contact-text').textContent = c.text;
+// addresses are put together here, not written in the page, to keep spam robots from collecting them
+$('contact-links').innerHTML = (c.emails || []).filter(Boolean).map((m, i) => `<a class="pill${i ? ' ghost' : ''}" href="mailto:${esc(m)}">${esc(m)}</a>`).join('') + SETTINGS.socials.filter(s => s.link).map(s => `<a class="pill ghost" href="${esc(s.link)}" target="_blank" rel="noopener">${esc(s.name)}</a>`).join('');
+if (!$('contact-links').innerHTML) $('contact').hidden = true;
+
+// tracklist: one Spotify player, the chosen track loads into it
+const PLAY = '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5l7 4.5-7 4.5z" fill="currentColor"/></svg>';
+$('tracks').innerHTML = SETTINGS.tracks.map((t, i) => `<li data-i="${i}">${t.cover ? `<img class="sleeve" src="${esc(t.cover)}" alt="Pochette de ${esc(t.title)}" loading="lazy">` : ''}<b>${esc(t.title)}</b><span class="where">${t.spotify ? `<a href="${esc(t.spotify)}" target="_blank" rel="noopener">Spotify</a>` : ''}${t.apple ? `<a href="${esc(t.apple)}" target="_blank" rel="noopener">Apple Music</a>` : ''}</span><button type="button" aria-label="Écouter ${esc(t.title)}">${PLAY}</button></li>`).join('');
+function play(i, start) {
+  const t = SETTINGS.tracks[i], id = trackId(t.spotify); if (!id) return;
+  document.querySelectorAll('#tracks li').forEach(li => li.setAttribute('aria-current', li.dataset.i == i));
+  if (t.cover) { const ci = $('cover').querySelector('img'); if (!ci.src.endsWith(t.cover)) { ci.style.opacity = 0; setTimeout(() => { ci.src = t.cover; ci.alt = 'Pochette de ' + t.title; ci.style.opacity = 1; }, 200); } }
+  $('player').innerHTML = `<iframe title="${esc(t.title)} sur Spotify" src="https://open.spotify.com/embed/track/${id}?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+}
+$('tracks').addEventListener('click', e => { if (e.target.closest('a')) return; const li = e.target.closest('li'); if (li) play(+li.dataset.i, true); });
+const first = SETTINGS.tracks.findIndex(t => /a jamais/i.test(t.title)); play(first >= 0 ? first : 0);
+
+// stage light haze, subtle: the photo already has its own lights
+const cv = $('lights'), g = cv.getContext('2d'), hero = document.querySelector('.hero');
+let W = 0, H = 0, aim = .5, aimT = .5;
+function size() { const d = Math.min(devicePixelRatio || 1, 2); W = cv.width = cv.clientWidth * d; H = cv.height = cv.clientHeight * d; }
+size(); addEventListener('resize', size);
+hero.addEventListener('pointermove', e => { aimT = e.clientX / innerWidth; });
+const beams = [{ x: .18, c: '61,123,255', ph: 0 }, { x: .5, c: '255,177,92', ph: 2.1 }, { x: .82, c: '61,123,255', ph: 3.4 }];
+const dust = Array.from({ length: 60 }, () => ({ x: Math.random(), y: Math.random(), v: .02 + Math.random() * .05, r: .6 + Math.random() * 1.4 }));
+function light(t) {
+  g.clearRect(0, 0, W, H); aim += (aimT - aim) * .04;
+  const beat = Math.pow(1 - ((t * 1.9) % 1), 3);
+  for (const b of beams) {
+    const sway = Math.sin(t * .4 + b.ph) * .28 + (aim - .5) * .3, x0 = b.x * W, y0 = -H * .04, len = H * 1.2, ang = Math.PI / 2 + sway * .6, sp = .06, a = .07 + beat * .04;
+    const gr = g.createLinearGradient(x0, y0, x0 + Math.cos(ang) * len, y0 + Math.sin(ang) * len);
+    gr.addColorStop(0, `rgba(${b.c},${a * 1.5})`); gr.addColorStop(.6, `rgba(${b.c},${a * .35})`); gr.addColorStop(1, `rgba(${b.c},0)`);
+    g.fillStyle = gr; g.beginPath(); g.moveTo(x0, y0); g.lineTo(x0 + Math.cos(ang - sp) * len, y0 + Math.sin(ang - sp) * len); g.lineTo(x0 + Math.cos(ang + sp) * len, y0 + Math.sin(ang + sp) * len); g.closePath(); g.fill();
+  }
+  g.fillStyle = 'rgba(220,225,255,.6)';
+  for (const d of dust) { d.y -= d.v * .004; d.x += Math.sin(t + d.y * 9) * .0003; if (d.y < 0) { d.y = 1; d.x = Math.random(); }
+    g.globalAlpha = .2 + .45 * Math.sin(t * 2 + d.x * 20) ** 2; g.beginPath(); g.arc(d.x * W, d.y * H, d.r * (W / 1400), 0, 7); g.fill(); }
+  g.globalAlpha = 1;
+}
+
+const topBar = $('top'), heroImg = $('hero-img');
+const night = document.querySelector('.night'), nightImg = $('night-img');
+function onScroll() { topBar.classList.toggle('solid', scrollY > 40); if (!reduce) { const r = night.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) nightImg.style.transform = `translateY(${(r.top + r.height / 2 - innerHeight / 2) * -.1}px)`; } if (!reduce && innerWidth > 860) heroImg.style.transform = `scale(${1.02 + Math.min(scrollY, 900) / 9000}) translateY(${scrollY * .15}px)`; }
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const cover = $('cover');
+cover.addEventListener('pointermove', e => { const r = cover.getBoundingClientRect(); cover.style.setProperty('--ry', ((e.clientX - r.left) / r.width - .5) * 12 + 'deg'); cover.style.setProperty('--rx', ((e.clientY - r.top) / r.height - .5) * -12 + 'deg'); });
+cover.addEventListener('pointerleave', () => { cover.style.setProperty('--ry', '0deg'); cover.style.setProperty('--rx', '0deg'); });
+function loop(now) { light(now / 1000); requestAnimationFrame(loop); }
+if (reduce) light(1); else requestAnimationFrame(loop);
+</script>
+</body>
+</html>
